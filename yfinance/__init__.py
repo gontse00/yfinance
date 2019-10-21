@@ -399,7 +399,7 @@ class Ticker():
         dividends, splits = self._parse_actions(data["chart"]["result"][0])
 
         # combine
-        df = _pd.concat([quotes, dividends, splits], axis=1, sort=True)
+        df = _pd.concat([quotes, dividends, splits], axis=1)
         df["Dividends"].fillna(0, inplace=True)
         df["Stock Splits"].fillna(0, inplace=True)
 
